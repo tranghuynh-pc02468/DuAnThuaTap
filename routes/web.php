@@ -26,5 +26,6 @@ Route::prefix('smell')->group(function(){
     Route::get('/edit/{id}', [SmellController::class,'edit'])->name('SmellEdit');
     Route::post('/edit/{id}', [SmellController::class,'update'])->name('SmellUpdate');
 
+    Route::post('/delete/{id}', [SmellController::class,'delete'])->name('SmellDelete');
 });
 

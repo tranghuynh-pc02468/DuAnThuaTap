@@ -73,5 +73,16 @@ class SmellController extends Controller
         return redirect()->route('Smell');
     }
 
+    public function delete($id)
+    {
+        $destroy = Smell::find($id)->delete();
+        if ($destroy) {
+            Toastr::success('Xóa dữ liệu thành công', 'Thành công');
+        } else {
+            Toastr::error('Xóa dữ liệu thất bại', 'Thất bại');
+        }
+        return redirect()->route('Smell');
+    }
+
 
 }
