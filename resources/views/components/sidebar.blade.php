@@ -30,6 +30,12 @@
                 <span>Nơi sản xuất</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ route('PackagingSpecification') }}">
+                <i class="bi bi-box-seam"></i>
+                <span>Quy cách đóng gói </span>
+            </a>
+        </li>
 
         <li class="nav-heading">Người dùng</li>
         <li class="nav-item">

@@ -6,6 +6,7 @@ use App\Http\Controllers\StaffController;
 use App\Http\Controllers\SmellController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\WhereProductController;
+use App\Http\Controllers\PackagingSpecificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,4 +52,12 @@ Route::prefix('where')->group(function () {
     Route::post('/delete/{id}', [WhereProductController::class, 'delete'])->name('WhereProductDelete');
 });
 
+Route::prefix('packaging-specification')->group(function () {
+    Route::get('/', [PackagingSpecificationController::class, 'index'])->name('PackagingSpecification');
+    Route::post('/', [PackagingSpecificationController::class, 'store'])->name('PackagingSpecificationStore');
 
+    Route::get('/edit/{id}', [PackagingSpecificationController::class, 'edit'])->name('PackagingSpecificationEdit');
+    Route::post('/edit/{id}', [PackagingSpecificationController::class, 'update'])->name('PackagingSpecificationUpdate');
+
+    Route::post('/delete/{id}', [PackagingSpecificationController::class, 'delete'])->name('PackagingSpecificationDelete');
+});
