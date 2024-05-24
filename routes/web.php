@@ -34,5 +34,9 @@ Route::prefix('brand')->group(function () {
     Route::get('/', [BrandController::class, 'index'])->name('Brand');
     Route::post('/', [BrandController::class, 'store'])->name('BrandStore');
 
+    Route::get('edit/{id}', [BrandController::class, 'edit'])->name('BrandEdit');
+    Route::post('edit/{id}', [BrandController::class, 'update'])->name('BrandUpdate');
+
+
 });
 

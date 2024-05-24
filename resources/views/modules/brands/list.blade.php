@@ -18,7 +18,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Thêm mới</h5>
-                            <form action="{{ route('BrandStore') }}" method="POST">
+                            <form action="{{ request()->segment(3) ? route('BrandUpdate', $data->id) : route('BrandStore') }}" method="POST">
                                 @csrf
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Tên<small
@@ -29,7 +29,12 @@
                                     <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
+                                @if(isset($data->id))
+                                    <button class="btn btn-primary" type="submit">Cập nhật</button>
+                                    <a class="btn btn-secondary" href="{{ route('Brand') }}">Hủy</a>
+                                @else
                                 <button class="btn btn-primary" type="submit">Thêm mới</button>
+                                @endif
                             </form>
                         </div>
                     </div>
@@ -56,7 +61,7 @@
                                         <td>{{ $item->name }}</td>
 
                                         <td class="d-flex">
-                                            <a href="" class="btn btn-warning text-white me-3">
+                                            <a href="{{ route('BrandEdit', $item->id) }}" class="btn btn-warning text-white me-3">
                                                 <i class="bi bi-pencil-square"></i>
                                             </a>
 
