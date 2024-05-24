@@ -19,7 +19,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="">
+            <a class="nav-link collapsed" href="{{ route('Brand') }}">
                 <i class="bi bi-award"></i>
                 <span>Thương hiệu</span>
             </a>
@@ -27,7 +27,7 @@
 
         <li class="nav-heading">Người dùng</li>
         <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ route('StaffList') }}">
+            <a class="nav-link collapsed" href="">
                 <i class="bi bi-people"></i>
                 <span>Nhân viên</span>
             </a>
@@ -45,29 +45,29 @@
             </a>
         </li>
 
-{{--        <li class="nav-item">--}}
-{{--            <a class="nav-link collapsed" data-bs-target="#users-nav" data-bs-toggle="collapse" href="#">--}}
-{{--                <i class="bi bi-person"></i><span>Người dùng</span><i class="bi bi-chevron-down ms-auto"></i>--}}
-{{--            </a>--}}
-{{--            <ul id="users-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">--}}
-{{--                <li>--}}
-{{--                    <a href="{{ route('StaffList') }}">--}}
-{{--                        <i class="bi bi-circle"></i><span>Nhân viên</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="">--}}
-{{--                        <i class="bi bi-circle"></i><span>Nhà cung cấp</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
-{{--                <li>--}}
-{{--                    <a href="">--}}
-{{--                        <i class="bi bi-circle"></i><span>Khách hàng</span>--}}
-{{--                    </a>--}}
-{{--                </li>--}}
+        {{--        <li class="nav-item">--}}
+        {{--            <a class="nav-link collapsed" data-bs-target="#users-nav" data-bs-toggle="collapse" href="#">--}}
+        {{--                <i class="bi bi-person"></i><span>Người dùng</span><i class="bi bi-chevron-down ms-auto"></i>--}}
+        {{--            </a>--}}
+        {{--            <ul id="users-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">--}}
+        {{--                <li>--}}
+        {{--                    <a href="{{ route('StaffList') }}">--}}
+        {{--                        <i class="bi bi-circle"></i><span>Nhân viên</span>--}}
+        {{--                    </a>--}}
+        {{--                </li>--}}
+        {{--                <li>--}}
+        {{--                    <a href="">--}}
+        {{--                        <i class="bi bi-circle"></i><span>Nhà cung cấp</span>--}}
+        {{--                    </a>--}}
+        {{--                </li>--}}
+        {{--                <li>--}}
+        {{--                    <a href="">--}}
+        {{--                        <i class="bi bi-circle"></i><span>Khách hàng</span>--}}
+        {{--                    </a>--}}
+        {{--                </li>--}}
 
-{{--            </ul>--}}
-{{--        </li>--}}
+        {{--            </ul>--}}
+        {{--        </li>--}}
 
     </ul>
 

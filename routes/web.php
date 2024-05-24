@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\SmellController;
+use App\Http\Controllers\BrandController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,15 +18,21 @@ use App\Http\Controllers\SmellController;
 */
 
 
-Route::get('/', [HomeController::class,'index'])->name('HomePage');
+Route::get('/', [HomeController::class, 'index'])->name('HomePage');
 
-Route::prefix('smell')->group(function(){
-    Route::get('/', [SmellController::class,'index'])->name('Smell');
-    Route::post('/', [SmellController::class,'store'])->name('SmellStore');
+Route::prefix('smell')->group(function () {
+    Route::get('/', [SmellController::class, 'index'])->name('Smell');
+    Route::post('/', [SmellController::class, 'store'])->name('SmellStore');
 
-    Route::get('/edit/{id}', [SmellController::class,'edit'])->name('SmellEdit');
-    Route::post('/edit/{id}', [SmellController::class,'update'])->name('SmellUpdate');
+    Route::get('/edit/{id}', [SmellController::class, 'edit'])->name('SmellEdit');
+    Route::post('/edit/{id}', [SmellController::class, 'update'])->name('SmellUpdate');
 
-    Route::post('/delete/{id}', [SmellController::class,'delete'])->name('SmellDelete');
+    Route::post('/delete/{id}', [SmellController::class, 'delete'])->name('SmellDelete');
+});
+
+Route::prefix('brand')->group(function () {
+    Route::get('/', [BrandController::class, 'index'])->name('Brand');
+    Route::post('/', [BrandController::class, 'store'])->name('BrandStore');
+
 });
 
