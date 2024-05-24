@@ -65,7 +65,7 @@
                                                 <i class="bi bi-pencil-square"></i>
                                             </a>
 
-                                            <form action="" method="POST">
+                                            <form action="{{ route('BrandDelete', $item->id) }}" method="POST">
                                                 @csrf
                                                 <button
                                                     onclick="return confirm('Bạn có chắc chắn muốn xóa thông tin này?');"

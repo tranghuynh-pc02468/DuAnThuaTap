@@ -37,6 +37,6 @@ Route::prefix('brand')->group(function () {
     Route::get('edit/{id}', [BrandController::class, 'edit'])->name('BrandEdit');
     Route::post('edit/{id}', [BrandController::class, 'update'])->name('BrandUpdate');
 
-
+    Route::post('delete/{id}',[BrandController::class, 'delete'])->name('BrandDelete');
 });
 

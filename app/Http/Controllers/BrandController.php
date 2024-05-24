@@ -70,4 +70,15 @@ class BrandController extends Controller
 
         return redirect()->route('Brand');
     }
+
+    public function delete($id)
+    {
+        $destroy = Brand::find($id)->delete();
+        if ($destroy) {
+            Toastr::success('Xóa dữ liệu thành công');
+        } else {
+            Toastr::error('Xóa dữ liệu thất bại');
+        }
+        return redirect()->route('Brand');
+    }
 }
