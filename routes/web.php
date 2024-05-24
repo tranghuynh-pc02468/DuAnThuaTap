@@ -19,3 +19,9 @@ use App\Http\Controllers\SmellController;
 
 Route::get('/', [HomeController::class,'index'])->name('HomePage');
 
+Route::prefix('smell')->group(function(){
+    Route::get('/', [SmellController::class,'index'])->name('Smell');
+    Route::post('/', [SmellController::class,'store'])->name('SmellStore');
+
+});
+
