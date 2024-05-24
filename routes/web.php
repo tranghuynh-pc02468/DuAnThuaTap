@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StaffController;
 use App\Http\Controllers\SmellController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\WhereProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +38,17 @@ Route::prefix('brand')->group(function () {
     Route::get('edit/{id}', [BrandController::class, 'edit'])->name('BrandEdit');
     Route::post('edit/{id}', [BrandController::class, 'update'])->name('BrandUpdate');
 
-    Route::post('delete/{id}',[BrandController::class, 'delete'])->name('BrandDelete');
+    Route::post('delete/{id}', [BrandController::class, 'delete'])->name('BrandDelete');
 });
+
+Route::prefix('where')->group(function () {
+    Route::get('/', [WhereProductController::class, 'index'])->name('WhereProduct');
+    Route::post('/', [WhereProductController::class, 'store'])->name('WhereProductStore');
+
+    Route::get('/edit/{id}', [WhereProductController::class, 'edit'])->name('WhereProductEdit');
+    Route::post('/edit/{id}', [WhereProductController::class, 'update'])->name('WhereProductUpdate');
+
+    Route::post('/delete/{id}', [WhereProductController::class, 'delete'])->name('WhereProductDelete');
+});
+
 

@@ -24,6 +24,12 @@
                 <span>Thương hiệu</span>
             </a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ route('WhereProduct') }}">
+                <i class="bi bi-pin-map"></i>
+                <span>Nơi sản xuất</span>
+            </a>
+        </li>
 
         <li class="nav-heading">Người dùng</li>
         <li class="nav-item">
