@@ -18,20 +18,25 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Thêm mới</h5>
-                            <form action="{{ route('SmellStore') }}" method="POST">
+                            <form
+                                action="{{ request()->segment(3) ? route('SmellUpdate', $data->id) : route('SmellStore') }}"
+                                method="POST">
                                 @csrf
                                 <div class="mb-3">
                                     <label for="name" class="form-label">Tên<small
                                             class="text-danger ms-1">*</small></label>
                                     <input type="text" class="form-control" id="name" name="name"
-                                           value="{{ old('name')  }}">
+                                           value="{{ old('name') ?? ($data->name ?? '')  }}">
                                     @error('name')
                                     <small class="text-danger">{{ $message }}</small>
                                     @enderror
                                 </div>
-
-                                <button class="btn btn-primary" type="submit">Thêm mới</button>
-
+                                @if(isset($data->id))
+                                    <button class="btn btn-primary" type="submit">Cập nhật</button>
+                                    <a href="{{ route('Smell') }}" class="btn btn-secondary">Hủy</a>
+                                @else
+                                    <button class="btn btn-primary" type="submit">Thêm mới</button>
+                                @endif
                             </form>
                         </div>
                     </div>
@@ -59,12 +64,15 @@
 
                                         <td class="d-flex">
                                             <a href="{{ route('SmellEdit', $item->id) }}"
-                                               class="btn btn-warning text-white me-3"><i class="bi bi-pencil-square"></i>
+                                               class="btn btn-warning text-white me-3"><i
+                                                    class="bi bi-pencil-square"></i>
                                             </a>
 
                                             <form action="{{ route('SmellDelete', $item->id) }}" method="POST">
                                                 @csrf
-                                                <button onclick="return confirm('Bạn có chắc chắn muốn xóa thông tin này?');" class="btn btn-danger" type="submit">
+                                                <button
+                                                    onclick="return confirm('Bạn có chắc chắn muốn xóa thông tin này?');"
+                                                    class="btn btn-danger" type="submit">
                                                     <i class="bi bi-trash3"></i>
                                                 </button>
                                             </form>
